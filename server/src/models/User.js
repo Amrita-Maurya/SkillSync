@@ -106,7 +106,7 @@ const userSchema = new mongoose.Schema(
 
 // ─── INDEXES ───────────────────────────────────────────────
 // Speeds up queries that filter or sort by these fields
-userSchema.index({ email: 1 });
+
 userSchema.index({ lastActiveDate: -1 });
 
 // ─── INSTANCE METHOD ───────────────────────────────────────

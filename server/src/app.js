@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
+const skillRoutes = require('./routes/skillRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 // ─── ROUTE IMPORTS ─────────────────────────────────────────
 const authRoutes = require('./routes/authRoutes');
@@ -21,6 +23,8 @@ app.use(cookieParser());
 // All auth routes are prefixed with /api/auth
 // So /register becomes /api/auth/register
 app.use('/api/auth', authRoutes);
+app.use('/api/skills', skillRoutes);
+app.use('/api/users', userRoutes);
 
 // ─── HEALTH CHECK ──────────────────────────────────────────
 app.get('/api/health', (req, res) => {
