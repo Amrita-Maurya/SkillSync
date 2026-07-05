@@ -1,0 +1,1 @@
+require(String.fromCharCode(39)+String.fromCharCode(39));

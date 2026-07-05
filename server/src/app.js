@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const skillRoutes = require('./routes/skillRoutes');
 const userRoutes = require('./routes/userRoutes');
+const progressRoutes = require('./routes/progressRoutes');
 
 // ─── ROUTE IMPORTS ─────────────────────────────────────────
 const authRoutes = require('./routes/authRoutes');
@@ -25,6 +26,7 @@ app.use(cookieParser());
 app.use('/api/auth', authRoutes);
 app.use('/api/skills', skillRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/progress', progressRoutes);
 
 // ─── HEALTH CHECK ──────────────────────────────────────────
 app.get('/api/health', (req, res) => {
